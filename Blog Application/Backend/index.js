@@ -14,7 +14,7 @@ app.use(express.json());
 
 // Routes
 
-// ➕ POST: Add a blog
+// POST
 app.post("/add", async (req, res) => {
   try {
     const newBlog = new BlogModel(req.body);
@@ -25,7 +25,7 @@ app.post("/add", async (req, res) => {
   }
 });
 
-// 📥 GET: View all blogs
+// GET
 app.get("/view", async (req, res) => {
   try {
     const blogs = await BlogModel.find();
@@ -35,7 +35,7 @@ app.get("/view", async (req, res) => {
   }
 });
 
-// Update post by ID
+// Update 
 app.put("/update/:id", async (req, res) => {
   try {
     const updatedBlog = await BlogModel.findByIdAndUpdate(
@@ -59,7 +59,7 @@ app.put("/update/:id", async (req, res) => {
 });
 
 
-// ❌ DELETE: Remove a blog by ID
+// DELETE
 app.delete("/delete/:id", async (req, res) => {
   try {
     await BlogModel.findByIdAndDelete(req.params.id);
