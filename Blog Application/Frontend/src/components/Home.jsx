@@ -9,11 +9,11 @@ import {
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom"; // ✅ import navigate
+import { useNavigate } from "react-router-dom"; 
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
-  const navigate = useNavigate(); // ✅ initialize
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     axios
@@ -32,7 +32,7 @@ const Home = () => {
   };
 
   const updatePost = (id) => {
-    navigate(`/add/${id}`); // ✅ navigate to update page
+    navigate(`/add/${id}`); 
   };
 
   return (
